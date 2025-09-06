@@ -1,0 +1,12 @@
+[package]
+name = "hello-roxa"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "hello_roxa"
+crate-type = ["cdylib", "lib"]
+
+[dependencies]
+solana-program = "1.18.14"
+

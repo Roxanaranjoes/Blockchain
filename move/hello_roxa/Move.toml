@@ -1,0 +1,10 @@
+[package]
+name = "hello_roxa"
+version = "0.0.1"
+
+[addresses]
+hello_roxa = "0x1"
+
+[dev-addresses]
+hello_roxa = "0x42"
+

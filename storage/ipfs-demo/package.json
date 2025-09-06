@@ -1,0 +1,14 @@
+{
+  "name": "ipfs-demo",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "start": "node upload.js"
+  },
+  "dependencies": {
+    "ipfs-http-client": "^60.0.1",
+    "dotenv": "^16.4.5"
+  }
+}
+

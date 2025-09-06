@@ -1,0 +1,6 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Pregunta general
+    url: https://github.com/OWNER/REPO/discussions
+    about: Dudas de uso, ideas y feedback general.
+

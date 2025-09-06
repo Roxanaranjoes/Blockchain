@@ -1,0 +1,30 @@
+{
+  "name": "blockchain-dev",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "18"
+    },
+    "ghcr.io/devcontainers/features/python:1": {
+      "version": "3.10"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "rust-lang.rust-analyzer",
+        "tamasfe.even-better-toml",
+        "ms-vscode.vscode-typescript-next",
+        "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint",
+        "juanblanco.solidity",
+        "ms-python.python"
+      ]
+    }
+  },
+  "postCreateCommand": "npm i -g pnpm && echo 'Devcontainer ready'",
+  "remoteUser": "vscode"
+}
+
