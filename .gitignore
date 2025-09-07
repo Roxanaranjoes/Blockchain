@@ -30,6 +30,7 @@ evm/hardhat/coverage/
 evm/hardhat/coverage.json
 evm/hardhat/typechain-types/
 evm/hardhat/dist/
+evm/hardhat/artifacts-addresses/
 
 # Foundry
 evm/foundry/out/
@@ -49,4 +50,3 @@ move/**/build/
 
 # IPFS demo
 storage/ipfs-demo/.env
-

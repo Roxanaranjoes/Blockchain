@@ -29,4 +29,3 @@ jobs:
       - name: Pytest
         working-directory: python
         run: pytest -q || true
-
