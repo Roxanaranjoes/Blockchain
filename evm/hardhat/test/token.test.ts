@@ -8,7 +8,7 @@ describe('TokenRoxa', () => {
     const token = await Token.connect(admin).deploy();
     await token.waitForDeployment();
 
-    await expect(token.connect(user).mint(user.address, 1)).to.be.revertedWithCustomError || to.be.reverted;
+    await expect(token.connect(user).mint(user.address, 1)).to.be.reverted;
 
     await token.grantRole(ethers.id('MINTER_ROLE'), user.address);
     await token.connect(user).mint(user.address, 100n);
@@ -33,4 +33,3 @@ describe('TokenRoxa', () => {
     await expect(token.connect(user).transfer(admin.address, 1)).to.emit(token, 'Transfer');
   });
 });
-

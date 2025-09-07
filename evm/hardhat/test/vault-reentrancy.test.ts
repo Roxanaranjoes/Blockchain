@@ -8,18 +8,8 @@ describe('VaultRoxa (reentrancy)', () => {
     const vault = await Vault.deploy();
     await vault.waitForDeployment();
 
-    // Deploy attacker que intenta reentrar
-    const Attacker = await ethers.getContractFactory(`
-      // SPDX-License-Identifier: MIT
-      pragma solidity ^0.8.24;
-      interface IVault { function deposit() external payable; function withdraw(uint256) external; }
-      contract Attacker {
-        IVault public v; bool public attacked; address owner;
-        constructor(address _v) { v = IVault(_v); owner = msg.sender; }
-        function attack() external payable { v.deposit{value: msg.value}(); v.withdraw(msg.value); }
-        receive() external payable { if(!attacked){ attacked = true; v.withdraw(1); } }
-      }
-    `);
+    // Deploy attacker que intenta reentrar (contrato en contracts/test/Attacker.sol)
+    const Attacker = await ethers.getContractFactory('Attacker');
     const attackerC = await Attacker.connect(attacker).deploy(await vault.getAddress());
     await attackerC.waitForDeployment();
 
@@ -29,4 +19,3 @@ describe('VaultRoxa (reentrancy)', () => {
     expect(bal).to.equal(0n);
   });
 });
-

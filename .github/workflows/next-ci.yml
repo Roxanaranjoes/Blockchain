@@ -18,14 +18,12 @@ jobs:
         with:
           node-version: 18
           cache: 'npm'
-          cache-dependency-path: dapp-next/package-lock.json
       - name: Install
         working-directory: dapp-next
-        run: npm ci
+        run: npm install --no-audit --no-fund
       - name: Lint
         working-directory: dapp-next
         run: npm run lint --if-present
       - name: Build
         working-directory: dapp-next
         run: npm run build
-

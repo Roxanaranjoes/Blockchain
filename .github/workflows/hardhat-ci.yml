@@ -18,10 +18,9 @@ jobs:
         with:
           node-version: 18
           cache: 'npm'
-          cache-dependency-path: evm/hardhat/package-lock.json
       - name: Install
         working-directory: evm/hardhat
-        run: npm ci
+        run: npm install --no-audit --no-fund
       - name: Lint
         working-directory: evm/hardhat
         run: npm run lint --if-present
@@ -31,4 +30,3 @@ jobs:
       - name: Coverage
         working-directory: evm/hardhat
         run: npm run coverage --if-present
-
