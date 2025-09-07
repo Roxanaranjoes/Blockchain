@@ -1,6 +1,4 @@
 import os
-import json
-import time
 import requests
 from dotenv import load_dotenv
 
@@ -19,4 +17,3 @@ def send(msg: str):
 
 if __name__ == '__main__':
     send('Demo alerta: todo listo 🚀')
-
